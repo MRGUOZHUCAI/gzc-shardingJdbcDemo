@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzc.mapper.OrderItemsMapper">
+
+    <update id="createTItemsIfNotExistsTable">
+        CREATE TABLE IF NOT EXISTS `t_order_items` (
+          `id` bigint NOT NULL AUTO_INCREMENT,
+          `order_id` bigint NOT NULL,
+          `unique_no` varchar(32) NOT NULL,
+          `quantity` int NOT NULL DEFAULT '1',
+          `is_active` tinyint NOT NULL DEFAULT 1,
+       /*   `inserttime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          `updatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,*/
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    </update>
+</mapper>
